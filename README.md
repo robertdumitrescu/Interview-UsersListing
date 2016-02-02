@@ -1,14 +1,16 @@
 # Interview-UsersListing
 
 ## Overview
-This is a task received from an Ireland development company to win a home-based role for a small project that they are developing.
+
+I received this assignment from a company I worked with. It was a lead software corporation with headquarters in Sillicon Valley, California, USA. I worked from home as an outsourced developer and I had a presentation meeting with them every week to show my progress and to review what was developed in the last sprint.  
+
 I applied for the following position:
 
-> Full-stack web developer
+> Senior Front-end developer with Node.js background
 
 ## Demo
-I deployed the demo behind two reverse proxies with a load balancer. If you have any trouble viewing the demo, please contact me.
-> The fully functional demo can be found here: [Demo-Interview-UsersListing](http://coming-soon.com)
+I deployed the demo behind two reverse proxies with a load balancer. If you have any trouble viewing the demo, please contact me on **robertdum01@gmail.com**.
+> The fully functional demo can be found here: [Demo-Interview-UsersListing](http://demouserslisting.rdumitrescu.com/admin/users)
 
 ## Task
 
