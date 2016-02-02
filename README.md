@@ -63,9 +63,9 @@ A sample object with that structure will be:
 To achieve the complete state of the task you will need to use the following technologies:
 
 - Node.js ([Official page](https://nodejs.org/en/))
+- Jade templating engine ([Official page](http://jade-lang.com/))
 - Angular.js ([Official page](https://angularjs.org/))
 - Angular-material ([Official page](https://material.angularjs.org/latest/))
-- Jade templating engine ([Official page](http://jade-lang.com/))
 
 
 - show all orders
