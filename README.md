@@ -8,9 +8,11 @@ I applied for the following position:
 
 > Senior Front-end developer with Node.js background
 
+
 ## Demo
 I deployed the demo behind two reverse proxies with a load balancer. If you have any trouble viewing the demo, please contact me on **robertdum01@gmail.com**.
 > The fully functional demo can be found here: [Demo-Interview-UsersListing](http://demouserslisting.rdumitrescu.com/admin/users)
+
 
 ## Task
 
@@ -71,7 +73,6 @@ The interface must have the following functionalities:
 
 - show all users
 - filter results on front-end
-- an usability friendly design
 - have pagination to show multiple pages with results
 - have the possibility to define how many results you want to show on a page
 - have the possibility to view a record details in a pop-up
@@ -79,24 +80,38 @@ The interface must have the following functionalities:
 
 You need to consider the following:
 
-- the project must be designed in a scalable manner
-- the design doesn't matter so any fancy design doesn't count
-- you must design the classes in EcmaScript 6
-- the code must be easy to read
+- the project must load in under 2 seconds for a real-time feel
+- any tweaks or improvements are accepted
+- you must use at least one jade block inheritance
+- if you avoid to use use Jquery it will be a plus
+
+The interface must match the following images: 
+
+
+## How will be the interface graded:
+
+You will receive a grade from 1 to 10 for interface implementation and how accurate was implemented in comparision with the images.
+You will receive another grade for user-experience and usability.
 
 
 ## Result
 
-I builded the app with two controllers. One of them was for API calls for an easy-to-use structure for the Angular framework.
-The other controller served the static HTML files in order to show the pages that are requested by the user.
+I builded the interface with the technologies they mentioned with the main focus on performance and usability. I designed the Angular.js controllers structure to match the best-practices that Google recommends to developers. Also I tried to use as much API's calls as I could for a better app scalability.
+
+I also used some usability tweaks like tooltips and toasts for a better interface understanding and an more linear learning curve for new users.
+
 In this open-source demo, I disabled the delete button to avoid persistence issues.
 
-The data processing is made in the **ordersModel.js** under **models** folder.
+The raw data that they provided me is located under the **data** folder.
+
+I got hired and I worked with them based on a project. Also I received the following grades:
+
+> Interface implementation: **9**
+> User-experience(usability): **10**
 
 Also I've written the basic JsDoc keywords tags in order to make the code easy to read.
 
 Anyone is free to fork and develop based on this solution. It's nice to have a link back if it's possible.
-
 
 
 ##Contact
