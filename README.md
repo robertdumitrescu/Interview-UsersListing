@@ -16,90 +16,56 @@ I deployed the demo behind two reverse proxies with a load balancer. If you have
 
 So the task sounds like this:
 
-You must write a mini app that can manange orders for company that want to deliver products in UK.
-To achieve this, lets assume that every order from an UK customer can be represented by an object.
+You must develop an listing interface that can manage company users that are registered on any of their platforms. Let's assume that all registered users are centralized in a single database for a better consistency. 
 
-The object has the following properties:
+To achieve this, every user will be an object with distinct properties in a larger collection.
 
-- companyName
-- customerAddress
-- orderedItem
+An user object will have the following: 
 
-So the sample data will be as this:
+- user_username
+- user_name
+- user_email
+- user_password
+- user_gender
+- user_profile_image
+- user_position
+- user_description
+- user_curiculum
+- generated
+- user_is_staff
+- user_role
+- user_creation_time
+- user_modified_time
+- _id
+
+A sample object with that structure will be:
 
 ```
-{
-  "orders" : [
-    {
-      "companyName" : "Supermarket 1",
-      "customerAddress" : "32 Dunnock Dr, Costessey, Norwich, Norfolk NR8 5FF",
-      "orderedItem" : "Item 1"
-    },
-    {
-      "companyName" : "Supermarket 3",
-      "customerAddress" : "Unnamed Road, Inverness, Highland IV5 7PW",
-      "orderedItem" : "Item 2"
-    },
-    {
-      "companyName" : "Supermarket 4",
-      "customerAddress" : "12 Buxton Rd, Ilford, Greater London IG2 7HG",
-      "orderedItem" : "Item 3"
-    },
-    {
-      "companyName" : "Supermarket 8",
-      "customerAddress" : "Unnamed Road, Inverness, Highland IV5 7PW",
-      "orderedItem" : "Item 4"
-    },
-    {
-      "companyName" : "Supermarket 2",
-      "customerAddress" : "32 Dunnock Dr, Costessey, Norwich, Norfolk NR8 5FF",
-      "orderedItem" : "Item 5"
-    },
-    {
-      "companyName" : "Supermarket 1",
-      "customerAddress" : "Unnamed Road, Inverness, Highland IV5 7PW",
-      "orderedItem" : "Item 2"
-    },
-    {
-      "companyName" : "Supermarket 2",
-      "customerAddress" : "32 Dunnock Dr, Costessey, Norwich, Norfolk NR8 5FF",
-      "orderedItem" : "Item 1"
-    },
-    {
-      "companyName" : "Supermarket 8",
-      "customerAddress" : "12 Buxton Rd, Ilford, Greater London IG2 7HG",
-      "orderedItem" : "Item 3"
-    },
-    {
-      "companyName" : "Supermarket 3",
-      "customerAddress" : "731 New Mill Rd, London SW8",
-      "orderedItem" : "Item 1"
-    },
-    {
-      "companyName" : "Supermarket 3",
-      "customerAddress" : "Unnamed Road, Inverness, Highland IV5 7PW",
-      "orderedItem" : "Item 3"
-    },
-    {
-      "companyName" : "Supermarket 2",
-      "customerAddress" : "731 New Mill Rd, London SW8",
-      "orderedItem" : "Item 8"
-    },
-    {
-      "companyName" : "Supermarket 1",
-      "customerAddress" : "12 Buxton Rd, Ilford, Greater London IG2 7HG",
-      "orderedItem" : "Item 3"
-    },
-    {
-      "companyName" : "Supermarket 2",
-      "customerAddress" : "32 Dunnock Dr, Costessey, Norwich, Norfolk NR8 5FF",
-      "orderedItem" : "Item 8"
-    }
-  ]
-}
+  {
+    "user_username": "RawPreview.com",
+    "user_name": "Jona D. Hackett",
+    "user_email": "JulianMChampion@teleworm.us",
+    "user_password": null,
+    "user_gender": "M",
+    "user_profile_image": "http://www.adweek.com/agencyspy/wp-content/uploads/sites/7/2015/06/steve-jobs.jpg",
+    "user_position": "",
+    "user_description": "",
+    "user_curiculum": "",
+    "generated": "generated",
+    "user_is_staff": "",
+    "user_role": "5",
+    "user_creation_time": 1454366238862,
+    "user_modified_time": 1454366238862,
+    "_id": "56afde1e6ce5be5718e676c7"
+  }
 ```
 
-Using Node.Js and Angular.Js, please implement a working solution to perform the following operations:
+To achieve the complete state of the task you will need to use the following technologies:
+
+- Node.js
+- Angular.js
+- Angular-material ([Official page](http://rdumitrescu.com/resume))
+
 
 - show all orders
 - show all orders from a particular company
