@@ -1,6 +1,6 @@
 extends ../adminlayout
 block append topStyleSheets
-	link(rel='stylesheet', href='#{global_path}/stylesheets/custom/admin/listingtheme.css')
+	link(rel='stylesheet', href="#{global_path}/stylesheets/custom/admin/listingtheme.css")
 block mainContent
 	div(ng-controller='mainCtrl')
 		div(ng-init="global_path=#{global_path}")
@@ -67,5 +67,5 @@ block mainContent
 
 //- bottomJavascripts - block declared in mainTemplate.jade (Extended here)
 block append bottomJavascripts
-	script( src='#{global_path}/javascripts/assets/smart-table/smart-table.debug.js' )
-	script( src='#{global_path}/javascripts/custom/admin/users/listing.js' )
+	script( src='/javascripts/assets/smart-table/smart-table.debug.js' )
+	script( src='/javascripts/custom/admin/users/listing.js' )

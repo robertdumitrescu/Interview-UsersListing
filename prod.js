@@ -88,15 +88,15 @@ app.use(function (req, res, next) {
     next();
 });
 
-
-app.use(express.static(path.join(__dirname, 'public')));
+var publicUrl = 'public';
+app.use(express.static(path.join(__dirname, publicUrl)));
 
 
 /**
  * Internal Routes (AIS)
  **/
 
-var builtUrl = GLOBAL.baseRelativeUrl + '/admin/users';
+var builtUrl = '/admin/users';
 
 app.use(builtUrl, adminUsers);
 
