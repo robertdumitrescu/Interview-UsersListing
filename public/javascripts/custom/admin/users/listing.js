@@ -6,11 +6,6 @@ app.controller('mainCtrl', ['$scope', '$http', '$filter', '$mdDialog', '$mdToast
     $scope.user = "";
     $scope.numberOfItemsPerPage = 5;
 
-    $scope.$watch("global_path", function(){
-        $rootScope.global_path = $scope.global_path.global_path;
-        console.log($rootScope.global_path);
-        console.log($scope.global_path);
-    });
 
     $scope.assemblePicture = function (pictureLink) {
 
@@ -29,7 +24,7 @@ app.controller('mainCtrl', ['$scope', '$http', '$filter', '$mdDialog', '$mdToast
 
         $mdDialog.show({
             controller: DialogController,
-            templateUrl: $rootScope.global_path + '/admin/users/view',
+            templateUrl: '/admin/users/view',
             locals: {user: $scope.user},
             parent: angular.element(document.body),
             clickOutsideToClose: true
@@ -52,7 +47,7 @@ app.controller('mainCtrl', ['$scope', '$http', '$filter', '$mdDialog', '$mdToast
             .cancel('No');
         $mdDialog.show(confirm).then(function () {
             // You accepted
-            $http.get($rootScope.global_path +  '/admin/users/delete/' + user_id).then(function (response) {
+            $http.get( '/admin/users/delete/' + user_id).then(function (response) {
                 console.log(response);
                 $rootScope.getTableData();
                 $mdToast.show(
@@ -80,10 +75,9 @@ app.controller('mainCtrl', ['$scope', '$http', '$filter', '$mdDialog', '$mdToast
 
     $rootScope.getTableData = function () {
 
-        $scope.$watch("global_path", function(){
 
 
-        $http.get($rootScope.global_path + '/admin/users/data').
+        $http.get('/admin/users/data').
             then(function (response) {
                 /**
                  * response is what return the server on ajax call (this is the success case)
@@ -104,7 +98,6 @@ app.controller('mainCtrl', ['$scope', '$http', '$filter', '$mdDialog', '$mdToast
 
         $scope.predicates = ['_id', 'user_email', 'user_name', 'user_username', 'user_modified_time'];
 
-        });
     };
 
 
