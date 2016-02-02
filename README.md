@@ -87,6 +87,7 @@ You need to consider the following:
 
 The interface must match the following images: 
 
+TO BE COMPLETED
 
 ## How will be the interface graded:
 
