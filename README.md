@@ -67,13 +67,15 @@ To achieve the complete state of the task you will need to use the following tec
 - Angular.js ([Official page](https://angularjs.org/))
 - Angular-material ([Official page](https://material.angularjs.org/latest/))
 
+The interface must have the following functionalities:
 
-- show all orders
-- show all orders from a particular company
-- show all orders from a particular address
-- show all orders that match the both criterias (reunion for data)
-- delete a particular order
-- the possibility (a button) to show how often each item has been ordered
+- show all users
+- filter results on front-end
+- an usability friendly design
+- have pagination to show multiple pages with results
+- have the possibility to define how many results you want to show on a page
+- have the possibility to view a record details in a pop-up
+- have the possibility to delete a particular record
 
 You need to consider the following:
 
