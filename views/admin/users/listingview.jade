@@ -1,0 +1,70 @@
+extends ../adminlayout
+block append topStyleSheets
+	link(rel='stylesheet', href='/stylesheets/custom/admin/listingtheme.css')
+block mainContent
+	div(ng-controller='mainCtrl')
+		div(st-table="displayedCollection" st-safe-src="rowCollection")
+			md-toolbar
+				.md-toolbar-tools
+					h2.md-breadcrumb
+						span Users
+					span(flex='')
+					md-input-container(flex='', ng-show="toggleSearch")
+						input.md-table-search(ng-model='user.firstName', st-search, type='search', style="width: 100%", aria-label="Search on client side")
+					md-button.md-accent.md-icon-button(ng-click="toggleSearch = !toggleSearch", aria-label="Search on client side")
+						md-tooltip
+							| Search on client side
+						md-icon.s16.fa.fa-search()
+			table.md-table()
+				thead
+					tr.md-table-header-row
+						th.md-table-header(st-ratio="5")
+						th.md-table-header(st-ratio="15", st-sort="_id") ID
+						th.md-table-header(st-ratio="15", st-sort="user_username") Username
+						th.md-table-header(st-ratio="15", st-sort="user_email") Email
+						th.md-table-header(st-ratio="5", st-sort="user_role") Role
+						th.md-table-header(st-ratio="5", st-sort="user_is_staff") Is Staff
+						th.md-table-header(st-ratio="10", st-sort="user_modified_time") Last Modification
+						th.md-table-header(st-ratio="15") Actions
+				tbody
+					tr.md-table-row(ng-repeat='row in displayedCollection')
+						td.md-table-cell
+							div.md-table-thumbs-xs.ng-scope(flex="30")
+								div.md-thumbnail(style="{{assemblePicture(row.user_profile_image)}}")
+						td.md-table-cell {{row._id}}
+						td.md-table-cell {{row.user_username}}
+						td.md-table-cell {{row.user_email}}
+						td.md-table-cell {{row.user_role}}
+						td.md-table-cell {{row.user_is_staff}}
+						td.md-table-cell {{row.user_modified_time}}
+						td.md-table-cell
+							section(layout='row', layout-sm='column', layout-align='center center', layout-wrap='')
+								md-button.md-fab.md-mini.md-icon-button.md-accent(ng-click="viewUser(row)", aria-label='Favorite')
+									md-tooltip
+										| View user
+									md-icon.s16.fa.fa-eye()
+								md-button.md-fab.md-mini.md-icon-button.md-accent(aria-label='Favorite', ng-click="deleteUser(row._id)",)
+									md-tooltip
+										| Delete user
+									md-icon.s16.fa.fa-trash()
+
+			div.md-table-footer-row(flex="100" layout='row', layout-align='center center', layout-wrap)
+				div(flex="30", layout="row")
+					md-input-container()
+					md-button.md-icon-button.md-accent(ng-click="getTableData()", aria-label='Refresh grid', flex="20")
+						md-tooltip
+							| Refresh grid
+						md-icon.s16.fa.fa-refresh
+					md-input-container(flex="50")
+						label Results no.
+						input(ng-model="numberOfItemsPerPage")
+				div(flex="55")
+					div(st-items-by-page='numberOfItemsPerPage', st-pagination='', st-template='/javascripts/assets/smart-table/smartTablesPagination.html')
+				div(flex="15")
+					st-summary
+		div(ng-init="getTableData()")
+
+//- bottomJavascripts - block declared in mainTemplate.jade (Extended here)
+block append bottomJavascripts
+	script( src='/javascripts/assets/smart-table/smart-table.debug.js' )
+	script( src='/javascripts/custom/admin/users/listing.js' )

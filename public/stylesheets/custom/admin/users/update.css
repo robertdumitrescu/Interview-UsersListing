@@ -1,0 +1,12 @@
+.md-switch-thumb, md-radio-button{
+    margin: 0;
+}
+
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgb(230,230,230);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

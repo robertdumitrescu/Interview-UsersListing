@@ -1,0 +1,30 @@
+<div ng-if="pages.length >= 2">
+<md-button class="md-icon-button md-accent" ng-click="selectPage(1)" ng-disabled="currentPage == 1" aria-label="First page">
+    <md-tooltip>
+        First page
+    </md-tooltip>
+    <md-icon class="s16 fa fa-angle-double-left"></md-icon>
+</md-button>
+    <md-button class="md-icon-button md-accent" ng-click="selectPage(currentPage - 1)" ng-disabled="currentPage == 1" aria-label="Previous page">
+        <md-tooltip>
+            Previous page
+        </md-tooltip>
+        <md-icon class="s16 fa fa-angle-left"></md-icon>
+    </md-button>
+<a><page-select></page-select> of {{numPages}}</a>
+    <md-button class="md-icon-button md-accent" ng-click="selectPage(currentPage + 1)" ng-disabled="numPages == currentPage" aria-label="Next page">
+        <md-tooltip>
+            Next page
+        </md-tooltip>
+        <md-icon class="s16 fa fa-angle-right"></md-icon>
+    </md-button>
+    <md-button class="md-icon-button md-accent" ng-click="selectPage(numPages)" ng-disabled="numPages == currentPage" aria-label="Last page">
+        <md-tooltip>
+            Last page
+        </md-tooltip>
+        <md-icon class="s16 fa fa-angle-double-right"></md-icon>
+    </md-button>
+</div>
+
+
+

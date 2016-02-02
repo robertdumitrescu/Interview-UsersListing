@@ -1,0 +1,62 @@
+md-dialog(aria-label='{{user.user_username}}')
+	form
+		md-toolbar
+			.md-toolbar-tools
+				h2 {{user.user_username}} ({{user._id}})
+				span(flex='')
+				md-button.md-icon-button(ng-click="answer('not applicable')")
+					md-icon.s16.fa.fa-times(aria-label="Close Dialog")
+		md-dialog-content(style='')
+			div(layout-wrap, layout='row', flex="100", flex-sm="100")
+				div.md-table-thumbs-md.ng-scope(flex="30", flex-sm="100")
+					div.md-thumbnail(style="{{assemblePicture(user.user_profile_image)}}")
+				div(flex="70", layout-padding, flex-sm="100")
+					h2 {{user.user_username}}
+					div(flex="100", layout-wrap, layout='row')
+						div(flex="100", layout-wrap, layout='row', ng-show="user._id")
+							div(flex="50") User ID:
+							div(flex="50") {{user._id}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_username")
+							div(flex="50") Username:
+							div(flex="50") {{user.user_username}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_email")
+							div(flex="50") E-mail:
+							div(flex="50") {{user.user_email}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_name")
+							div(flex="50") Name:
+							div(flex="50") {{user.user_name}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_position")
+							div(flex="50") Position:
+							div(flex="50") {{user.user_position}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_role")
+							div(flex="50") Role:
+							div(flex="50") {{user.user_role}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_gender")
+							div(flex="50") Gender:
+							div(flex="50") {{user.user_gender}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_is_staff")
+							div(flex="50") Is staff:
+							div(flex="50") {{user.user_is_staff}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_creation_time")
+							div(flex="50") Creation date:
+							div(flex="50") {{user.user_creation_time}}
+						div(flex="100", layout-wrap, layout='row', ng-show="user.user_modified_time")
+							div(flex="50") Last modified time:
+							div(flex="50") {{user.user_modified_time}}
+					br
+					br
+					div(ng-show="user.user_profile_image")
+						strong User Profile image
+						p
+							a(href="{{user.user_profile_image}}") {{user.user_profile_image}}
+					div(ng-show="user.user_curiculum")
+						strong User Curiculum Vitae
+						p
+							a(href="{{user.user_curiculum}}") {{user.user_curiculum}}
+					div(ng-show="user.user_description")
+						strong Description
+						p {{user.user_description}}
+		.md-actions(layout='row')
+			span(flex='')
+			md-button(ng-click="answer('useful')", style='margin-right:20px;')
+				| OK

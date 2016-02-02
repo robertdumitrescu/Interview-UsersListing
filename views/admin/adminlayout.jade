@@ -1,0 +1,24 @@
+extends ../mainTemplate
+//- topStyleSheets - block declared in mainTemplate.jade (Extended and appended here)
+block append topStyleSheets
+	link(rel='stylesheet', href='/stylesheets/custom/main.css')
+//- mainPage - block declared in mainTemplate.jade (Extended here)
+block mainPage
+	body(ng-app="StarterApp")
+		//- MainNavbar - block declared here (adminLayout.jade) (Extended anywhere else)
+		block mainNavbar
+			div()
+		!= messages()
+		//- actionInfoContainer - block declared here (adminLayout.jade) (Extended anywhere else)
+		block actionInfoContainer
+		if errors
+			//- serverValidationErrors - block declared here (adminLayout.jade) (Extended anywhere else)
+			block serverValidationErrors
+				each error, i in errors
+					div.alert.alert-callout.alert-danger
+						i.fa.fa-exclamation-circle
+						strong
+							| &nbsp;Server Validation Error:&nbsp;
+						| #{error}
+		//- mainContent - block declared here (adminLayout.jade) (Extended anywhere else)
+		block mainContent
