@@ -3,6 +3,7 @@ block append topStyleSheets
 	link(rel='stylesheet', href='/stylesheets/custom/admin/listingtheme.css')
 block mainContent
 	div(ng-controller='mainCtrl')
+		div(ng-init="global_path=#{global_path}")
 		div(st-table="displayedCollection" st-safe-src="rowCollection")
 			md-toolbar
 				.md-toolbar-tools

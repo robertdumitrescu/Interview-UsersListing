@@ -63,6 +63,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 /**
+ * Global vars
+ */
+
+GLOBAL.baseRelativeUrl = "/demo/interview-userslisting";
+
+/**
  *Express Sessions
  */
 
@@ -90,7 +96,9 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Internal Routes (AIS)
  **/
 
-app.use('/admin/users', adminUsers);
+var builtUrl = GLOBAL.baseRelativeUrl + '/admin/users';
+
+app.use(builtUrl, adminUsers);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

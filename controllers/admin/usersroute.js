@@ -10,7 +10,9 @@ var User = require("../../models/usermodel");
 
 /** Route user Listing */
 router.get('/', function (req, res) {
-    res.render('admin/users/listingview.jade');
+    res.render('admin/users/listingview.jade',
+        {global_path: JSON.stringify({"global_path" : GLOBAL.baseRelativeUrl})}
+    );
 });
 
 /**
@@ -41,7 +43,7 @@ router.get('/view', function (req, res) {
  *  @description Route for delete User
  **/
 router.get('/delete/:id', function (req, res) {
-    var query_object = {_id: new ObjectId(req.params.id)};
+    var query_object = {_id: req.params.id};
 
 
         User.prototype.deleteUserById(query_object, function (result) {
