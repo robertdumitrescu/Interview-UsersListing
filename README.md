@@ -107,6 +107,7 @@ The raw data that they provided me is located under the **data** folder.
 I got hired and I worked with them based on a project. Also I received the following grades:
 
 > Interface implementation: **9**
+
 > User-experience(usability): **10**
 
 Also I've written the basic JsDoc keywords tags in order to make the code easy to read.
