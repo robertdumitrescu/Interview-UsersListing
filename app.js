@@ -46,13 +46,6 @@ var bodyParser = require('body-parser');
  * @link "https://github.com/jaredhanson/connect-flash" | Connect Flash on GitHub
  */
 var flash = require('connect-flash');
-/**
- * MongoDB Node Driver
- * The MongoDB driver is the high level part of the 2.0 or
- * higher MongoDB driver and is meant for end users.
- * @module mongodb
- * @link "https://github.com/mongodb/node-mongodb-native" | MongoDB Node Driver on GitHub
- */
 
 // Internal pages and controllers
 var adminUsers = require('./controllers/admin/usersroute');
